@@ -71,5 +71,23 @@ public class VirtualKeyboard {
             });
         }
 
+        // Agregar componentes al panel
+        panel.add(pangramaLabel);
+        panel.add(textArea);
+        for (JButton button : buttons) {
+            panel.add(button);
+        }
+
+        // Mostrar la ventana
+        frame.setVisible(true);
+
+
+        // Mostrar informe
+        System.out.println("Teclas que se le dificultan al usuario:");
+        for (int i = 0; i < teclasCorrectas.length; i++) {
+            if (!teclasCorrectas[i]) {
+                System.out.print((char)(i + 'A' - 1) + " ");
+            }
+        }
     }
 }
