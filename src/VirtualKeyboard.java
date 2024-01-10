@@ -52,7 +52,24 @@ public class VirtualKeyboard {
         JLabel pangramaLabel = new JLabel(pangrama);
         boolean[] teclasCorrectas = new boolean[62];
 
-        
-            }
+        // Configurar botones
+        for (int i = 0; i < buttons.length; i++) {
+            buttons[i] = new JButton("" + (char)(i + 'A' - 1));
+            buttons[i].addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    char tecla = buttons[i].getText().charAt(0);
+                    if (pangrama.indexOf(tecla) != -1) {
+                        // Tecla correcta
+                        textArea.append(buttons[i].getText());
+                        teclasCorrectas[i] = true;
+                    } else {
+                        // Tecla incorrecta
+                        teclasCorrectas[i] = false;
+                    }
+                }
+            });
         }
-    
+
+    }
+}
