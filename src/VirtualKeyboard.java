@@ -46,6 +46,13 @@ public class VirtualKeyboard {
                                    "Jovencillo emponzoñado de whisky, qué mala figurota exhibes.",
                                    "La dulce niña oye el ruido del tambor.",
                              };
+        Random random = new Random();
+        int pangramaIndex = random.nextInt(pangramas.length);
+        String pangrama = pangramas[pangramaIndex];
+        JLabel pangramaLabel = new JLabel(pangrama);
+        boolean[] teclasCorrectas = new boolean[62];
 
+        
+            }
         }
-    }
+    
